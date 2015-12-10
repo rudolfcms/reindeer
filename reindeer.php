@@ -6,7 +6,7 @@ class Reindeer {
 			'thumb' => [
 				'default' => 'images/reindeer.png', // https://pixabay.com/p-296524/?no_redirect
 				'width' => 1000,
-				'height' => 300
+				'height' => 500
 			],
 			'date' => [
 				'default' => [
