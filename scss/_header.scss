@@ -1,0 +1,17 @@
+// header
+
+body > header {
+	padding: 20px 40px 60px;
+	width: 100%;
+	background: #fff;
+	color: #000;
+	font-style: italic;
+	border-bottom: 1px dashed #b30000;
+	position: relative;
+
+	h1 {
+		a {
+			color: inherit;
+		}
+	}
+}

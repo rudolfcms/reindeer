@@ -1,0 +1,45 @@
+// article
+
+body > article {
+	padding: 40px 10px;
+}
+
+article {
+	figure {
+		width: 100%;
+		background: #b30000;
+
+		img {
+			max-width: 100%;
+			height: auto;
+			padding: 0;
+			margin: 0;
+		}
+	}
+	h3 {
+		font-size: 4.4rem;
+		line-height: 5.0rem;
+
+		a {
+			text-decoration: none;
+		}
+	}
+
+	p.news-info {
+		padding: 10px 15px;
+
+		span {
+			&::after {
+				content: "\2022";
+				margin: 0 10px;
+				//color: #aaa;
+			}
+
+			&:last-child {
+				&::after {
+					content: "";
+				}
+			}
+		}
+	}
+}
