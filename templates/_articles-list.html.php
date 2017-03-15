@@ -1,28 +1,28 @@
-<?php if($this->isArticles()): ?>
-<?php while($this->haveArticles()): $this->article(); ?> 
+<?php if ($this->loop->isItems()): ?>
+<?php while ($this->loop->haveItems()): $item = $this->loop->item(); ?> 
 	<article role="article" class="article">
 		<header>
 			<figure>
-				<?=$this->thumbnail();?> 
+				<?=$item->thumbnail();?> 
 			</figure>
-			<h3><a href="<?=$this->url();?>"><?=$this->title();?></a></h3>
+			<h3><a href="<?=$item->url();?>"><?=$item->title();?></a></h3>
 			<p class="news-info">
-				<span class="author"><?=_('author');?>: <?=$this->author();?></span>
-				<span class="time"><?=_('added');?>: <time datetime="<?=$this->date('c');?>" title="<?=$this->date();?>"><?=$this->date(false, 'locale');?></time></span>
-				<?php if($this->hasPhotos()):?><span class="photos"><?=_('photos');?>: <?=$this->photos();?></span><?php endif;?> 
-				<span class="views"><?=_('views');?>: <?=$this->views();?></span>
-				<?php if($this->hasCategory()):?><span class="category-anchor"><?=$this->category();?></span><?php endif;?> 
+				<span class="author"><?=_('author');?>: <?=$item->author();?></span>
+				<span class="time"><?=_('added');?>: <time datetime="<?=$item->date('c');?>" title="<?=$item->date();?>"><?=$item->date(false, 'locale');?></time></span>
+				<?php if($item->hasPhotos()):?><span class="photos"><?=_('photos');?>: <?=$item->photos();?></span><?php endif;?> 
+				<span class="views"><?=_('views');?>: <?=$item->views();?></span>
+				<?php if($item->hasCategory()):?><span class="category-anchor"><?=$item->category();?></span><?php endif;?> 
 			</p>
 		</header>
 		<section>
-			<p><?=$this->content($truncate = 500, $stripTags = true);?></p>
-			<p class="more"><a href="<?=$this->url();?>">Czytaj dalej »</a></p>
+			<p><?=$item->content($truncate = 500, $stripTags = true);?></p>
+			<p class="more"><a href="<?=$item->url();?>">Czytaj dalej »</a></p>
 		</section>
 	</article>
 <?php endwhile;?> 
 
 	<nav role="navigation">
-		<?=$this->nav(['ul'=>'cd-pagination', 'current'=>'current'], 5);?>
+		<?=$this->loop->nav(['ul'=>'cd-pagination', 'current'=>'current'], 5);?>
 	</nav>
 
 <?php else: ?> 
